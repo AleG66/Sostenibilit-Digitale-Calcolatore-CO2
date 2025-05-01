@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Calcolatore CO₂</title>
+</head>
+<body>
+  <h3>Calcola CO₂ risparmiata</h3>
+
+  <label>Oggetto:
+    <select id="oggetto">
+      <option value="3">Maglietta</option>
+      <option value="4">Pantaloni</option>
+      <option value="7">Giacca</option>
+    </select>
+  </label>
+
+  <br><br>
+
+  <label>Quantità:
+    <input type="number" id="quantita" min="1" value="1">
+  </label>
+
+  <br><br>
+
+  <button onclick="calcola()">Calcola</button>
+
+  <p id="risultato"></p>
+
+  <script>
+    function calcola() {
+      const co2 = parseFloat(document.getElementById('oggetto').value);
+      const qta = parseInt(document.getElementById('quantita').value);
+      const totale = co2 * qta;
+      document.getElementById('risultato').innerText = "Risparmi: " + totale + " kg di CO₂";
+    }
+  </script>
+</body>
+</html>
